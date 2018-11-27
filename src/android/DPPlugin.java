@@ -17,8 +17,9 @@ import pt.deloitte.entel.plugin.DPManagerCallback;
 public class DPPlugin extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
+		Log.i("DP","HOLA MUNDO");
         if (action.equals("start")) {
-            
+            Log.i("DP","HOLA MUNDOstart");
 			Context context = cordova.getActivity().getApplicationContext();
             DPManager.getInstance().initialize(context, getDPManagerCallback(context, callbackContext));
 
@@ -29,6 +30,7 @@ public class DPPlugin extends CordovaPlugin {
         }
 
         if (action.equals("stop")) {
+			Log.i("DP","HOLA MUNDOstop");
             DPManager.getInstance().stop();
             PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
             callbackContext.sendPluginResult(pluginResult);
@@ -36,7 +38,7 @@ public class DPPlugin extends CordovaPlugin {
         }
 		
 		if (action.equals("connect")){	
-			Log.i("DP","HOLA MUNDO");
+			Log.i("DP","HOLA MUNDOonnect");
 			Context context = cordova.getActivity().getApplicationContext();
             DPManager.getInstance().initialize2(context, getDPManagerCallback(context, callbackContext));
             PluginResult pluginResult = new PluginResult(PluginResult.Status.NO_RESULT);
