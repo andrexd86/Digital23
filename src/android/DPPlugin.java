@@ -17,7 +17,7 @@ import pt.deloitte.entel.plugin.DPManagerCallback;
 public class DPPlugin extends CordovaPlugin {
 	@Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
-		Log.i("DP","HOLA MUNDO");
+		
         if (action.equals("start")) {
             Log.i("DP","HOLA MUNDOstart");
 			Context context = cordova.getActivity().getApplicationContext();
